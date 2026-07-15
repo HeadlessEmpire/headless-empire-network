@@ -23,6 +23,20 @@ This repository is an early `v0.1` development workspace. The schemas and protoc
 
 ## Start Here
 
+### Join discovery (publish + PR)
+
+Want to be listed in the bootstrap registry?
+
+1. Host your **member manifest** + **JSON Now feed** on HTTPS you control.  
+2. Open a pull request that adds your manifest URL to [`registry/registry.json`](registry/registry.json).  
+3. Maintainers review and merge.
+
+**Full steps:** [JOIN.md](JOIN.md) · **Policy:** [registry/policy.md](registry/policy.md)
+
+This is the same model as community list repos: clone → edit registry data → PR → human review. The registry stores **URLs only**; you keep owning the documents on your domain.
+
+### Build on the protocol
+
 - Read the [protocol draft](spec/protocol-v0.1.md).
 - Review the [Now feed extensions](spec/feed-extensions-v0.1.md).
 - Inspect the [member manifest schema](schemas/member-manifest.schema.json) and [registry schema](schemas/registry.schema.json).
@@ -31,6 +45,7 @@ This repository is an early `v0.1` development workspace. The schemas and protoc
 ```bash
 npm test
 npm run validate:examples
+npm run validate:registry
 ```
 
 Node.js 20 or newer is recommended. The initial validator has no runtime dependencies.

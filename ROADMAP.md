@@ -13,9 +13,11 @@
 
 ## Phase 2 - Bootstrap Registry
 
-- Export a registry JSON document.
-- Build a human-readable directory.
-- Define join, update, pause, move, removal, and appeal flows.
+- [x] Export a registry JSON document (`registry/registry.json`).
+- [x] Build a human-readable directory (`directory/index.html`).
+- [x] Define join via **GitHub PR** (`JOIN.md`, policy, membership PR template).
+- [ ] Process first real membership PRs (opt-in publishers).
+- [ ] Document update, pause, move, removal, and appeal in practice after first listings.
 
 ## Phase 3 - Agent Discovery
 
