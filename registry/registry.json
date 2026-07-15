@@ -2,7 +2,7 @@
   "protocol": "https://headlessempire.com/network/registry/0.1",
   "registry_id": "https://headlessempire.com/network/registry.json",
   "name": "Headless Empire Bootstrap Registry",
-  "updated_at": "2026-07-15T11:51:19Z",
+  "updated_at": "2026-07-15T12:23:46Z",
   "policy_url": "https://headlessempire.com/network/policy",
   "members": [
     {
@@ -11,8 +11,8 @@
       "status": "active",
       "verification_level": "unverified",
       "first_seen_at": "2026-07-15T11:51:19Z",
-      "last_checked_at": "2026-07-15T11:51:19Z",
-      "manifest_updated_at": "2026-07-15T11:47:32Z"
+      "last_checked_at": "2026-07-15T12:23:46Z",
+      "manifest_updated_at": "2026-07-15T12:21:29Z"
     }
   ],
   "registries": []
