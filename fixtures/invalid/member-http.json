@@ -1,0 +1,9 @@
+{
+  "protocol": "https://headlessempire.com/network/protocol/0.1",
+  "id": "http://operator.example/headless-empire.json",
+  "status": "active",
+  "updated_at": "2026-07-15T09:00:00Z",
+  "human": {"name": "Invalid Example", "url": "http://operator.example/"},
+  "now": {"human_url": "http://operator.example/now", "json_feed_url": "http://operator.example/feed.json"},
+  "collaboration": {"open": true, "contact_policy": "HTTP URLs are invalid."}
+}

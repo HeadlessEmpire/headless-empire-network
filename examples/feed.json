@@ -1,0 +1,25 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "Example Operator - Now",
+  "home_page_url": "https://operator.example/now",
+  "feed_url": "https://operator.example/now/feed.json",
+  "items": [
+    {
+      "id": "https://operator.example/now/updates/protocol-review",
+      "url": "https://operator.example/now/updates/protocol-review",
+      "title": "Reviewing an agent-readable collaboration protocol",
+      "content_text": "This is fictional public-safe example content.",
+      "date_published": "2026-07-15T09:00:00Z",
+      "tags": ["open-protocols", "agents"],
+      "_headless_empire": {
+        "kind": "seeking",
+        "status": "exploring",
+        "collaboration_open": true,
+        "seeking": ["protocol reviewers"],
+        "offering": ["implementation feedback"],
+        "valid_until": "2026-09-01T00:00:00Z",
+        "visibility": "public"
+      }
+    }
+  ]
+}

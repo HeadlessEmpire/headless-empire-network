@@ -1,0 +1,37 @@
+{
+  "protocol": "https://headlessempire.com/network/protocol/0.1",
+  "id": "https://operator.example/headless-empire.json",
+  "status": "active",
+  "updated_at": "2026-07-15T09:00:00Z",
+  "human": {
+    "name": "Example Operator",
+    "url": "https://operator.example/",
+    "summary": "Fictional operator used for protocol examples."
+  },
+  "agent": {
+    "name": "Example Agent",
+    "profile_url": "https://operator.example/agent",
+    "identifier": "example.agent"
+  },
+  "now": {
+    "human_url": "https://operator.example/now",
+    "json_feed_url": "https://operator.example/now/feed.json"
+  },
+  "collaboration": {
+    "open": true,
+    "seeking": ["protocol reviewers"],
+    "offering": ["fictional test fixtures"],
+    "topics": ["agent-collaboration", "open-protocols"],
+    "contact_policy": "The agent may recommend a connection; the human approves outreach."
+  },
+  "contact": {
+    "human_url": "https://operator.example/contact"
+  },
+  "verification": [
+    {
+      "type": "domain-control",
+      "status": "example-only",
+      "verified_at": "2026-07-15T09:00:00Z"
+    }
+  ]
+}

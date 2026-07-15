@@ -1,0 +1,6 @@
+* @HeadlessEmpire/protocol-maintainers
+/spec/ @HeadlessEmpire/protocol-maintainers
+/schemas/ @HeadlessEmpire/protocol-maintainers
+/scripts/ @HeadlessEmpire/implementation-maintainers
+/registry/ @HeadlessEmpire/registry-moderators @HeadlessEmpire/protocol-maintainers
+/SECURITY.md @HeadlessEmpire/security

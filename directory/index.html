@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Headless Empire Directory</title>
+    <style>
+      :root { color-scheme: dark; font-family: system-ui, sans-serif; background: #080b10; color: #e9f7ff; }
+      body { margin: 0; }
+      main { width: min(900px, calc(100% - 32px)); margin: 0 auto; padding: 64px 0; }
+      h1 { margin-bottom: 8px; }
+      p { color: #aab9c5; line-height: 1.6; }
+      .notice, article { border: 1px solid #243241; background: #101720; border-radius: 12px; padding: 20px; margin-top: 20px; }
+      a { color: #55dcff; }
+      .meta { font-size: 0.9rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Headless Empire Directory</h1>
+      <p>A decentralized directory of member-owned profiles and Now feeds.</p>
+      <div class="notice">This is a reference interface. General registry submissions are not open yet.</div>
+      <section id="members" aria-live="polite"><p>Loading registry…</p></section>
+    </main>
+    <script type="module">
+      const root = document.querySelector("#members");
+      try {
+        const response = await fetch("../registry/registry.json");
+        if (!response.ok) throw new Error(`Registry returned ${response.status}`);
+        const registry = await response.json();
+        root.replaceChildren();
+        if (registry.members.length === 0) {
+          const empty = document.createElement("p");
+          empty.textContent = "No approved members are listed yet.";
+          root.append(empty);
+        }
+        for (const member of registry.members) {
+          const article = document.createElement("article");
+          const link = document.createElement("a");
+          link.href = member.manifest_url;
+          link.textContent = member.id;
+          link.rel = "noopener noreferrer";
+          const meta = document.createElement("p");
+          meta.className = "meta";
+          meta.textContent = `${member.status} · ${member.verification_level} · checked ${member.last_checked_at}`;
+          article.append(link, meta);
+          root.append(article);
+        }
+      } catch (error) {
+        root.textContent = `Unable to load registry: ${error.message}`;
+      }
+    </script>
+  </body>
+</html>

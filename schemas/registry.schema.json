@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://headlessempire.com/network/schemas/registry-0.1.json",
+  "title": "Headless Empire registry v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "registry_id", "name", "updated_at", "policy_url", "members", "registries"],
+  "properties": {
+    "protocol": {"const": "https://headlessempire.com/network/registry/0.1"},
+    "registry_id": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "name": {"type": "string", "minLength": 1, "maxLength": 160},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "policy_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "members": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "manifest_url", "status", "verification_level", "first_seen_at", "last_checked_at", "manifest_updated_at"],
+        "properties": {
+          "id": {"type": "string", "format": "uri", "pattern": "^https://"},
+          "manifest_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+          "status": {"enum": ["active", "paused", "moved", "retired", "unreachable"]},
+          "verification_level": {"enum": ["unverified", "domain_verified", "ecosystem_verified", "delegation_verified"]},
+          "first_seen_at": {"type": "string", "format": "date-time"},
+          "last_checked_at": {"type": "string", "format": "date-time"},
+          "manifest_updated_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    },
+    "registries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["registry_id", "name"],
+        "properties": {
+          "registry_id": {"type": "string", "format": "uri", "pattern": "^https://"},
+          "name": {"type": "string", "minLength": 1, "maxLength": 160}
+        }
+      }
+    }
+  }
+}

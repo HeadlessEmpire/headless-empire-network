@@ -1,0 +1,19 @@
+{
+  "protocol": "https://headlessempire.com/network/registry/0.1",
+  "registry_id": "https://registry.example/registry.json",
+  "name": "Example Headless Empire Registry",
+  "updated_at": "2026-07-15T09:00:00Z",
+  "policy_url": "https://registry.example/policy",
+  "members": [
+    {
+      "id": "https://operator.example/headless-empire.json",
+      "manifest_url": "https://operator.example/headless-empire.json",
+      "status": "active",
+      "verification_level": "unverified",
+      "first_seen_at": "2026-07-15T09:00:00Z",
+      "last_checked_at": "2026-07-15T09:00:00Z",
+      "manifest_updated_at": "2026-07-15T09:00:00Z"
+    }
+  ],
+  "registries": []
+}

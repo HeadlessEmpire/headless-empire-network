@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://headlessempire.com/network/schemas/member-manifest-0.1.json",
+  "title": "Headless Empire member manifest v0.1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["protocol", "id", "status", "updated_at", "human", "now", "collaboration"],
+  "properties": {
+    "protocol": {"const": "https://headlessempire.com/network/protocol/0.1"},
+    "id": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "status": {"enum": ["active", "paused", "moved", "retired"]},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "moved_to": {"type": "string", "format": "uri", "pattern": "^https://"},
+    "human": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "url"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 120},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "summary": {"type": "string", "maxLength": 500}
+      }
+    },
+    "organization": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "url"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 160},
+        "url": {"type": "string", "format": "uri", "pattern": "^https://"}
+      }
+    },
+    "agent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "maxLength": 120},
+        "profile_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "identifier": {"type": "string", "maxLength": 255}
+      }
+    },
+    "now": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["human_url", "json_feed_url"],
+      "properties": {
+        "human_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "json_feed_url": {"type": "string", "format": "uri", "pattern": "^https://"}
+      }
+    },
+    "collaboration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["open", "contact_policy"],
+      "properties": {
+        "open": {"type": "boolean"},
+        "seeking": {"$ref": "#/$defs/stringList"},
+        "offering": {"$ref": "#/$defs/stringList"},
+        "topics": {"$ref": "#/$defs/stringList"},
+        "contact_policy": {"type": "string", "minLength": 1, "maxLength": 500}
+      }
+    },
+    "contact": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "human_url": {"type": "string", "format": "uri", "pattern": "^https://"},
+        "agent_inbox_url": {"type": "string", "format": "uri", "pattern": "^https://"}
+      }
+    },
+    "verification": {
+      "type": "array",
+      "maxItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "status"],
+        "properties": {
+          "type": {"type": "string", "minLength": 1, "maxLength": 80},
+          "status": {"type": "string", "minLength": 1, "maxLength": 80},
+          "verified_at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "moved"}}},
+      "then": {"required": ["moved_to"]}
+    }
+  ],
+  "$defs": {
+    "stringList": {
+      "type": "array",
+      "maxItems": 50,
+      "items": {"type": "string", "minLength": 1, "maxLength": 160},
+      "uniqueItems": true
+    }
+  }
+}

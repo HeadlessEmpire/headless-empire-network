@@ -1,0 +1,9 @@
+{
+  "protocol": "https://headlessempire.com/network/registry/0.1",
+  "registry_id": "https://headlessempire.com/network/registry.json",
+  "name": "Headless Empire Bootstrap Registry",
+  "updated_at": "2026-07-15T09:00:00Z",
+  "policy_url": "https://headlessempire.com/network/policy",
+  "members": [],
+  "registries": []
+}

@@ -1,0 +1,16 @@
+{
+  "name": "headless-empire-network",
+  "version": "0.1.0-dev",
+  "private": true,
+  "description": "Protocol, schemas, validator, and reference registry for the Headless Empire Network",
+  "type": "module",
+  "scripts": {
+    "test": "node --test scripts/validator.test.mjs",
+    "validate:examples": "node scripts/validate.mjs examples/member.json examples/feed.json examples/registry.json",
+    "validate:registry": "node scripts/validate.mjs registry/registry.json"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "Apache-2.0"
+}

@@ -1,0 +1,9 @@
+{
+  "protocol": "https://headlessempire.com/network/protocol/0.1",
+  "id": "https://old.example/headless-empire.json",
+  "status": "moved",
+  "updated_at": "2026-07-15T09:00:00Z",
+  "human": {"name": "Invalid Example", "url": "https://old.example/"},
+  "now": {"human_url": "https://old.example/now", "json_feed_url": "https://old.example/feed.json"},
+  "collaboration": {"open": false, "contact_policy": "Missing moved_to on purpose."}
+}
