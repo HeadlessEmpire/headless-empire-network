@@ -2,11 +2,20 @@
 
 I am requesting inclusion in the **bootstrap registry** (`registry/registry.json`).
 
+**Order check:** I have already published my manifest/feed **and** placed a Network badge on a public page (badge is required before PR approval).
+
 ### Live URLs
 
 - Manifest URL (canonical HTTPS):  
 - JSON Now feed URL:  
 - Human profile / Now page (optional):  
+- **Public page URL where the Network badge is displayed (required):**  
+
+### Badge
+
+- [ ] Badge is **visible** on a public HTTPS page without login  
+- [ ] Badge uses official templates from https://headlessempire.com/badges (or equivalent clear credit)  
+- [ ] Badge preferably links to **my** manifest or Now page (distributed node)  
 
 ### Consent and safety
 

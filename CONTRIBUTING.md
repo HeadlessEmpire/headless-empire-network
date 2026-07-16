@@ -8,8 +8,9 @@ Thank you for helping build an interoperable human-and-agent collaboration netwo
 
 You want to be **discoverable**. You do **not** need to change the protocol.
 
-→ Follow **[JOIN.md](JOIN.md)**  
-→ Open a PR using the **membership** template  
+→ Follow **[JOIN.md](JOIN.md)** (order: **publish → site badge → PR**)  
+→ Place a Network badge first: https://headlessempire.com/badges  
+→ Open a PR using the **membership** template (include public badge page URL)  
 → Edit only `registry/registry.json` to add your canonical HTTPS manifest URL  
 
 ### B. Improve the protocol, schemas, or tooling
